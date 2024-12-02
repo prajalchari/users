@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client"; // Updated import for React 18+
+import { BrowserRouter } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
+import ProjectRoutes from "./Routes/ProjectRoutes";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root")); // Updated for React 18+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ProjectRoutes />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
