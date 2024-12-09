@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 import ProjectRoutes from './Routes/ProjectRoutes';
 
 function App() {
-  return <ProjectRoutes />
+  return <ProjectRoutes />;
 }
 
 export default App;
+
 
 
 

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Button, Form, Input, Row, Col, message } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Login = ({ userData }) => {
+const Login = ({ userData, setIsLoggedIn }) => {
     const [form] = Form.useForm();
+    const navigate = useNavigate();
 
     const onFinish = (values) => {
         if (userData && userData.email === values.email && userData.password === values.password) {
             message.success('Login successful!');
-            console.log("userData", userData)
+            setIsLoggedIn(true); 
+            navigate('/dashboard'); 
         } else {
             message.error('Invalid email or password.');
         }
@@ -29,10 +31,7 @@ const Login = ({ userData }) => {
             <Form.Item
                 label="Email"
                 name="email"
-                rules={[
-                    { type: 'email', message: 'Enter a valid email!' },
-                    { required: true, message: 'Email is required!' },
-                ]}
+                rules={[{ type: 'email', message: 'Enter a valid email!' }, { required: true, message: 'Email is required!' }]}
             >
                 <Input />
             </Form.Item>
@@ -58,3 +57,5 @@ const Login = ({ userData }) => {
 };
 
 export default Login;
+
+

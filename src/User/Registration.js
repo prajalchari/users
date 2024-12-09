@@ -1,14 +1,14 @@
 import React from 'react';
-import { Button, Form, Input, Row, Col, message } from 'antd';
+import { Form, Input, Button, Row, Col, message } from 'antd';
 import { Link } from 'react-router-dom';
 
 const Registration = ({ setUserData }) => {
     const [form] = Form.useForm();
 
     const onFinish = (values) => {
-        setUserData(values); // Store user data
+        setUserData(values); 
         message.success('Registration successful!');
-        form.resetFields();
+        form.resetFields(); 
     };
 
     const onFinishFailed = () => {
@@ -33,20 +33,14 @@ const Registration = ({ setUserData }) => {
             <Form.Item
                 label="Email"
                 name="email"
-                rules={[
-                    { type: 'email', message: 'Enter a valid email!' },
-                    { required: true, message: 'Email is required!' },
-                ]}
+                rules={[{ type: 'email', message: 'Enter a valid email!' }, { required: true, message: 'Email is required!' }]}
             >
                 <Input />
             </Form.Item>
             <Form.Item
                 label="Password"
                 name="password"
-                rules={[
-                    { required: true, message: 'Password is required!' },
-                    { min: 8, message: 'Password must be at least 8 characters long.' },
-                ]}
+                rules={[{ required: true, message: 'Password is required!' }, { min: 8, message: 'Password must be at least 8 characters long.' }]}
             >
                 <Input.Password />
             </Form.Item>
@@ -69,9 +63,7 @@ const Registration = ({ setUserData }) => {
                 <Input.Password />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit">
-                    Register
-                </Button>
+                <Button type="primary" htmlType="submit">Register</Button>
                 <Row justify="space-between" align="middle">
                     <Col>
                         <Link to="/">Go back to login</Link>
@@ -83,4 +75,5 @@ const Registration = ({ setUserData }) => {
 };
 
 export default Registration;
+
 
