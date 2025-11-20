@@ -9,7 +9,8 @@ const Profile = ({ userData, setUserData }) => {
         message.success('Profile updated successfully!');
     };
 
-    return (
+    return (<div>
+        <h2>Profile</h2>
         <Form
             form={form}
             layout="vertical"
@@ -34,6 +35,7 @@ const Profile = ({ userData, setUserData }) => {
                 <Button type="primary" htmlType="submit">Save</Button>
             </Form.Item>
         </Form>
+        </div>
     );
 };
 

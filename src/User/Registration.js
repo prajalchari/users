@@ -16,6 +16,8 @@ const Registration = ({ setUserData }) => {
     };
 
     return (
+        <div>
+            <h2>Registration</h2>
         <Form
             form={form}
             name="register"
@@ -71,6 +73,7 @@ const Registration = ({ setUserData }) => {
                 </Row>
             </Form.Item>
         </Form>
+        </div>
     );
 };
 
